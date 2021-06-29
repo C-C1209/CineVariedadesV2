@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use PDF;
 use App\Models\Pelicula;
 use Validator;
 
@@ -20,6 +21,21 @@ class PeliculasController extends Controller
             ->get();
         return view('controlAdmin.peliculas')
         ->with('productos', $datos);
+    }
+
+    public function generar(){
+        $datos=\DB::table('Peliculas')
+        ->select('Peliculas.*')
+        ->orderBy('Peliculas.id','DESC')
+        
+        ->get();
+
+    $fecha=date("Y-m-d");    
+    $todo=compact('datos','fecha');
+
+    $pdf = PDF::loadView('reportes.peliculas', $todo);
+    //return $pdf->download('reporte.pdf');
+    return $pdf->download('reporte_'.date('Y_m_d_h_m_s').'.pdf');
     }
 
     public function add(Request $requests){

@@ -66,6 +66,9 @@
 
 <!--AQUI SE PONE EL CODIGO DE LA VISTA DE AGREGAR PELIS-->
                     <div class="card-body">
+                        <a href="/admin/peliculas/generar" class="btn btn-outline-primary btn-sm"> 
+                            <i class="fa fa-print">Imprimir Reporte</i>
+                        </a>
                         <div class="modal-header">
                             <h4 class="modal-title">Agregar pelicula</h4>
                         </div>

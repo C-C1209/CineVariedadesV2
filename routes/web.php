@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // Ruta para Peliculas
     Route::get('/peliculas', [App\Http\Controllers\Admin\PeliculasController::class, 'index']);
+    Route::get('/peliculas/generar', [App\Http\Controllers\Admin\PeliculasController::class, 'generar']);
     Route::POST('/peliculas/edit', [App\Http\Controllers\Admin\PeliculasController::class, 'edit']);
     Route::POST('/peliculas/eliminar', [App\Http\Controllers\Admin\PeliculasController::class, 'del']);
     Route::POST('/peliculas/agregar', [App\Http\Controllers\Admin\PeliculasController::class, 'add']);
