@@ -24,11 +24,7 @@
 		<div class="card">
 			<div class="card-header">
 				<h3>Iniciar sesión</h3>
-				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
-				</div>
+				
 			</div>
 			<div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -59,7 +55,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            </div> 
                         </div>
 
                         <div class="form-group row">
@@ -80,22 +76,14 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                                
                             </div>
                         </div>
                     </form>
                 </div>
 			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					¿No tienes una cuenta?<a href="#">Regístrate</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="../admin">¿Olvidaste tu contraseña?</a>
-				</div>
+				
+				
 			</div>
 		</div>
 	</div>
