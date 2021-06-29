@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 //Pagina controlAdmin
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
+    
+
     // Ruta para Inicio
     Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index']);
 

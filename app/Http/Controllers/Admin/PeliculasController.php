@@ -9,6 +9,10 @@ use Validator;
 
 class PeliculasController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $datos=\DB::table('peliculas')
             ->select('peliculas.*')
