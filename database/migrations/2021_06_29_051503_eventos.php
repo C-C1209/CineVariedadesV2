@@ -10,7 +10,7 @@ class Eventos extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+     */ 
     public function up()
     {
         schema::create('eventos',function(BluePrint $table){

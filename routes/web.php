@@ -19,7 +19,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/', [App\Http\Controllers\Admin\AdminController::class,'index']);
     Route::get('/peliculas', [App\Http\Controllers\Admin\PeliculasController::class,'index']);
     Route::POST('/peliculas/edit', [App\Http\Controllers\Admin\PeliculasController::class,'edit']);
-    
+    Route::POST('/peliculas/eliminar', [App\Http\Controllers\Admin\PeliculasController::class,'del']);
+    Route::POST('/peliculas/agregar', [App\Http\Controllers\Admin\PeliculasController::class,'add']);
 
 });
 

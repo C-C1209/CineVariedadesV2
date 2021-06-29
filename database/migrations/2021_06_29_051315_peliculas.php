@@ -10,7 +10,7 @@ class Peliculas extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+     */ 
     public function up()
     {
         schema::create('peliculas',function(BluePrint $table){
@@ -21,6 +21,7 @@ class Peliculas extends Migration
             $table->string('Director');
             $table->string('Fecha');
             $table->string('Descripcion');
+            $table->timestamps();
         });
     }
 

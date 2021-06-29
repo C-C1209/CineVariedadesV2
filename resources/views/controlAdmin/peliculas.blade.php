@@ -31,6 +31,18 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1>Peliculas</h1>
+                            @if($message = Session::get('Listo'))
+                                        <div class="alert alert-success alert-dismissable fade show col-12" role="alert">
+                                            <h5>Listo</h5>
+                                            <p>{{$message}}</p>
+                                        </div>
+                                    @endif
+                            @if($message = Session::get('error'))
+                                <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                    <h5>Error</h5>
+                                    <p>{{$message}}</p>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -52,14 +64,57 @@
                     </div>
 
 
-
+<!--AQUI SE PONE EL CODIGO DE LA VISTA DE AGREGAR PELIS-->
                     <div class="card-body">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Agregar pelicula</h4>
+                        </div>
 
-                        <!-- Aqui vamos a trabajar-->
-                        
+                        <form action="/admin/peliculas/agregar" method="post">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="form-group col-12">
+                                <input type="hidden" id="idAdd" name="id">
+                                    <label>Nombre de la pelicula</label>
+                                    <br>
+                                    <input id="nombreAdd" name="nombre" type="text" class="form-control col-12 " style="width:100%"  placeholder="Nombre de pelicula">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>Idioma</label>
+                                    <br>
+                                    <input id="idiomaAdd" name="idioma" type="text" class="form-control col-12 " style="width:100%"  placeholder="Idioma">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>Subtitulos</label>
+                                    <br>
+                                    <input id="subtitulosAdd" name="subtitulos" type="text" class="form-control col-12 " style="width:100%"  placeholder="Subtitulos" >
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>Director</label>
+                                    <br>
+                                    <input id="directorAdd" name="director" type="text" class="form-control col-12 " style="width:100%"  placeholder="director de la pelicula" >
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>Fecha</label>
+                                    <br>
+                                    <input id="fechaAdd" name="fecha" type="date" class="form-control col-12 " style="width:100%"  placeholder="Fecha de la pelicula" >
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>Descripcion</label>
+                                    <br>
+                                    <input id="descripcionAdd" name="descripcion" type="text" class="form-control col-12 " style="width:100%"  placeholder="Descripcion de la pelicula" >
+                                </div>
+
+                                <div class="modal-footer justify-content-between">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary" >Agregar</button>
+                                </div>
+                            </div>
+                        </form>
 
                     </div>
                     <!-- /.card-body -->
+<!--AQUI SE ACABA EL CODIGO DE LA VISTA DE AGREGAR PELIS-->
                 </div>
                 <!-- /.card -->
 
@@ -80,12 +135,6 @@
                         <div class="content">
                             <div class="container-fluid">
                                 <div class="row">
-                                    @if($message = Session::get('Listo'))
-                                        <div class="alert alert-success alert-dismissable fade show col-12" role="alert">
-                                            <h5>Listo</h5>
-                                            <p>{{$message}}</p>
-                                        </div>
-                                    @endif
 
                                     <table class="table">
                                     <thead>
@@ -160,6 +209,61 @@
 
 
 <!--AQUI ESTAN LOS MODALS-->
+
+<!--MODAL Agregar-->
+<div class="modal fade" id="modalAddConvenio">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Agregar pelicula</h4>
+            </div>
+
+            <form action="/admin/peliculas/agregar" method="post">
+            @csrf
+            <div class="modal-body">
+                <div class="form-group col-12">
+                <input type="hidden" id="idAdd" name="id">
+                    <label>Nombre de la pelicula</label>
+                    <br>
+                    <input id="nombreAdd" name="nombre" type="text" class="form-control col-12 " style="width:100%"  placeholder="Nombre de pelicula">
+                </div>
+                <div class="form-group col-12">
+                    <label>Idioma</label>
+                    <br>
+                    <input id="idiomaAdd" name="idioma" type="text" class="form-control col-12 " style="width:100%"  placeholder="Idioma">
+                </div>
+                <div class="form-group col-12">
+                    <label>Subtitulos</label>
+                    <br>
+                    <input id="subtitulosAdd" name="subtitulos" type="text" class="form-control col-12 " style="width:100%"  placeholder="Subtitulos" >
+                </div>
+                <div class="form-group col-12">
+                    <label>Director</label>
+                    <br>
+                    <input id="directorAdd" name="director" type="text" class="form-control col-12 " style="width:100%"  placeholder="director de la pelicula" >
+                </div>
+                <div class="form-group col-12">
+                    <label>Fecha</label>
+                    <br>
+                    <input id="fechaAdd" name="fecha" type="date" class="form-control col-12 " style="width:100%"  placeholder="Fecha de la pelicula" >
+                </div>
+                <div class="form-group col-12">
+                    <label>Descripcion</label>
+                    <br>
+                    <input id="descripcionAdd" name="descripcion" type="text" class="form-control col-12 " style="width:100%"  placeholder="Descripcion de la pelicula" >
+                </div>
+
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" >Agregar</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--MODAL Agregar-->
+
 <!-- Modal Edit -->
 <div class="modal fade" id="modal-edit">
         <div class="modal-dialog">
@@ -236,7 +340,7 @@
             @csrf
                 <div class="modal-body">
                     <div class="form-group col-12">
-                        <input id="idConv" name="id" type="hidden">
+                        <input id="idEliminar" name="id" type="hidden">
                         <label>Está a punto de eliminar una pelicula</label>
                         <br>
                         <label>¿Está usted segur@ de eliminar esta pelicula?</label>
