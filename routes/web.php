@@ -14,25 +14,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Pagina controlAdmin
-Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
-   
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+
     // Ruta para Inicio
-    Route::get('/', [App\Http\Controllers\Admin\AdminController::class,'index']);
+    Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index']);
 
     // Ruta para Peliculas
-    Route::get('/peliculas', [App\Http\Controllers\Admin\PeliculasController::class,'index']);
-    Route::POST('/peliculas/edit', [App\Http\Controllers\Admin\PeliculasController::class,'edit']);
-    Route::POST('/peliculas/eliminar', [App\Http\Controllers\Admin\PeliculasController::class,'del']);
-    Route::POST('/peliculas/agregar', [App\Http\Controllers\Admin\PeliculasController::class,'add']);
-
+    Route::get('/peliculas', [App\Http\Controllers\Admin\PeliculasController::class, 'index']);
+    Route::POST('/peliculas/edit', [App\Http\Controllers\Admin\PeliculasController::class, 'edit']);
+    Route::POST('/peliculas/eliminar', [App\Http\Controllers\Admin\PeliculasController::class, 'del']);
+    Route::POST('/peliculas/agregar', [App\Http\Controllers\Admin\PeliculasController::class, 'add']);
 
     // Ruta para los usuarios
-    Route::get('/usuarios', [App\Http\Controllers\Admin\UsuariosController::class,'index']);
+    Route::get('/funciones', [App\Http\Controllers\Admin\FuncionesController::class, 'index']);
 
+    // Ruta para los usuarios
+    Route::get('/usuarios', [App\Http\Controllers\Admin\UsuariosController::class, 'index']);
 });
 
-    Route::get('/', [App\Http\Controllers\Cliente\ClienteController::class,'index']);
-    Route::get('/login', function () { return view('login'); });
+Route::get('/', [App\Http\Controllers\Cliente\ClienteController::class, 'index']);
+Route::get('/login', function () {
+    return view('login');
+});
 
 
 
@@ -46,5 +49,4 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class,'index'])->name('admin');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');

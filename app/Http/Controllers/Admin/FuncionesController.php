@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class FuncionesController extends Controller
 {
-    //
+    public function index(){
+        return view('controlAdmin.funciones');
+    }
 }

@@ -7,11 +7,12 @@
     <title>Administracion Cine Variedades</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('./dashboard/plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('./dashboard/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('./dashboard/dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('./dashboard/dist/css/adminlte.min.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -30,7 +31,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Inicio</h1>
+                            <h1>Funciones</h1>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -42,7 +43,7 @@
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title"> Resumen </h3>
+                        <h3 class="card-title"> Crear una nueva Funcion </h3>
 
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -57,6 +58,27 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"> Funciones Programadas </h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+                
+               
+
+
             </section>
             <!-- /.content -->
         </div>
@@ -75,13 +97,13 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="{{asset('./dashboard/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('./dashboard/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{asset('./dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('./dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
-    <script src="{{asset('./dashboard/dist/js/adminlte.min.js')}}"></script>
+    <script src="{{ asset('./dashboard/dist/js/adminlte.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('./dashboard/dist/js/demo.js')}}"></script>
+    <script src="{{ asset('./dashboard/dist/js/demo.js') }}"></script>
 </body>
 
 </html>
