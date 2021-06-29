@@ -16,7 +16,7 @@ class Eventos extends Migration
         schema::create('eventos',function(BluePrint $table){
             $table->increments('id');
             $table->integer('id_usuario')->unsigned();
-            $table->foreign('id_usuario')->references('id')->on('usuarios');
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->timestamp('Fecha')->nullable();
             $table->string('Evento');
             $table->integer('id_funcion')->unsigned();
