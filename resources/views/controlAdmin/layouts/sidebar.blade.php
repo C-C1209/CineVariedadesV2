@@ -20,7 +20,7 @@
                with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a href="./controlPanel.php" class="nav-link">
+                    <a href="/admin/" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <img src="../img/deportes.png" class="" alt="">
                         <p>
@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="./usuarios.php" class="nav-link">
+                    <a href="/admin/usuarios" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Usuarios
